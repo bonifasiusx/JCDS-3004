@@ -10,21 +10,21 @@
 # Output: 2 Years 4 Month 1 Week 2 Days
 
 # Your code here
-import math
 
 year = 360
 month = 30
+week = 7
 
 user_input = int(input('Masukkan jumlah hari yang mau dihitung: '))
 
 year_result = user_input // year
 
-# user_input % year = 130
+# Sisa hari --> user_input % year = 130 sisa hari
 month_result = (user_input % year) // month
 
-week_result = (user_input % year) % month // 7
+week_result = (user_input % year) % month // week
 
-days_result = math.ceil((user_input % year) % month / 7)
+days_result = user_input % year % month - week
 
 result = f'{year_result} Years {month_result} Month {week_result} Week {days_result} Days'
 print(result)
