@@ -1,0 +1,4 @@
+Practice Session - Wed, 28 May 2025
+- Material Review: Python Variable, Data Type, User Input & Conditional Statement
+- Python Quiz
+- QnA and Discussion
