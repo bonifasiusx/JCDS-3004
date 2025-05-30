@@ -1,0 +1,3 @@
+Hard Case,Accesories,250000,50
+Eggle Speaker,Electronic,650000,35
+Logi'S Mouse,Devices,325000,30
