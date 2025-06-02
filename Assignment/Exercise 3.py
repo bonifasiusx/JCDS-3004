@@ -60,12 +60,14 @@ print()
 print('No. 4')
 print('======')
 
-enter_name = input('Name: ')
-for letter in enter_name:
-    name = enter_name[:1]
-    surname = enter_name[' ':]
+fullname = input('Name: ')
+name = fullname.split() # Pisahkan setiap kata
 
-print(f'{name.title()}.{surname.title()}')
+# Ambil Inisial di kata pertama dan terakhir
+first_letter = name[0][0]
+last_letter = name[-1][0]
+
+print(f'{first_letter.upper()}.{last_letter.upper()}')
 
 # 5
 print()
