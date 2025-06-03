@@ -9,6 +9,19 @@
 #         print(n)
 #         break
 
+# 3
+print()
+print('No. 3')
+print('=====')
+
+symbol = 'X'
+space = ''
+length = 9
+
+for i in range(1,10):
+    print(f'{space * (length / 2)}{symbol}')
+
+
 # # 4
 # print()
 # print('No. 4')
@@ -22,17 +35,17 @@
 #         print(f'\'{cek_palindrom.lower()}\' adalah sebuah palindrom!')
 #         break
 
-# 5
-print()
-print('No. 5')
-print('=====')
+# # 5
+# print()
+# print('No. 5')
+# print('=====')
 
-cek_pangram = input('Masukkan kalimat: ')
-letters = 'abcdefghijklmnopqrstuvwxyz'
-# SAMPE SINI SOB #
-for pangram in range(len(letters) - len(cek_pangram) + 1):
-    if cek_pangram[pangram : pangram + len(cek_pangram)] == letters:
-        print('Kalimat tersebut adalah pangram!')
+# cek_pangram = input('Masukkan kalimat: ')
+# letters = 'abcdefghijklmnopqrstuvwxyz'
+# # SAMPE SINI SOB #
+# for pangram in range(len(letters) - len(cek_pangram) + 1):
+#     if cek_pangram[pangram : pangram + len(cek_pangram)] == letters:
+#         print('Kalimat tersebut adalah pangram!')
 
 
 # # COPY-PASTE Jawaban No. 4 dan 10 dari script Exercise Day 2 Python Fundamental
