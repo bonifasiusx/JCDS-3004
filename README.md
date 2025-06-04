@@ -1,3 +1,3 @@
 ﻿# Practice Session
 
-Purwadhika JCDS-3004 M1.D2 Python Fundamental (Practice Session)
+Purwadhika JCDS-3004 - Module 1 - Python Fundamental (Practice Session)
