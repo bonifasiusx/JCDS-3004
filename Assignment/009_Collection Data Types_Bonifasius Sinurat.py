@@ -61,7 +61,7 @@
 
 # for num in list: 
 #     num_result = math.sqrt(num) # Hitung akar dari setiap angka di list
-#     if int(num_result) == math.sqrt(num): # Cari angka yang int saja
+#     if round(num_result) == math.sqrt(num): # Cari angka yang int saja
 #         total_square_number.append(num) # Masukkan angka kedalam list baru
 
 # print(f'Output\nTotal square number: {len(total_square_number)}')
@@ -72,14 +72,14 @@
 # print('No. 4')
 # print('=====')
 
-# movies1 = ['Witch Of Stone', 'Mice And Soldiers', ' Learning From The Ashes', 'Assassins Of Sorrow', 'Wand Of Next Year', 'Binding To Dreams']
+# # movies1 = ['Witch Of Stone', 'Mice And Soldiers', ' Learning From The Ashes', 'Assassins Of Sorrow', 'Wand Of Next Year', 'Binding To Dreams']
 
-# movies2 = ['Soldiers And Visitors', 'Intelligence In Orbit', 'Wand Of Next Year', 'Birth Of The Sands', 'Assassins Of Sorrow']
+# # movies2 = ['Soldiers And Visitors', 'Intelligence In Orbit', 'Wand Of Next Year', 'Birth Of The Sands', 'Assassins Of Sorrow']
 
 # # EXAMPLE 2 ---> Cek Penggunaan Huruf Besar-Kecil di Data
-# # movies1 = ['Horrors And Figures', 'Foreigner In The Library', ' Learning From The Ashes', 'Assassins Of Sorrow', 'Wand Of Next Year', ' Oblivious To The Country']
+# movies1 = ['Horrors And Figures', 'Foreigner In The Library', ' Learning From The Ashes', 'Assassins Of Sorrow', 'Wand Of Next Year', ' Oblivious To The Country']
 
-# # movies2 = ['Soldiers And Visitors', 'Intelligence In Orbit', 'wand of next year','horrors and figures', 'assassins of sorrow']
+# movies2 = ['Soldiers And Visitors', 'Intelligence In Orbit', 'wand of next year','horrors and figures', 'assassins of sorrow']
 
 # # for loop dengan .lower() agar huruf besar-kecil di data tidak mempengaruhi hasil
 # movies1 = [movie.lower() for movie in movies1]
@@ -103,213 +103,22 @@
 # # Pake round untuk menghasilkan 2 angka desimal
 # print(f'\nSimilarity Level: {round(similarity_level, 2)}%')
 
-# 5
-print()
-print('No. 5')
-print('=====')
-# COPY-PASTE dari script Exercise 4 Pt.2 Loop Statements
-welcome = '\nSelamat Datang di Pasar Buah'
 
-# Data Buah
-# Pakai nested List untuk data buah-buahan
-PRODUCT = [ # Update jumlah stok agar lebih relate dengan skenario asli
-    ['apel', 40, 10000],
-    ['jeruk', 30, 15000],
-    ['anggur', 20, 20000]
-]
+from prettytable import PrettyTable
+# Mendingan make Tabulate ---> Outline
+# No 5-6 di script baru ---> 009_Collection Data Types (No. 5-6)_Bonifasius Sinurat.py
+# print()
+# print('No. 5')
+# print('=====')
+# # COPY-PASTE dari script Exercise 4 Pt.2 Loop Statements
+# welcome = '\nSelamat Datang di Pasar Buah'
 
-print(welcome) # Welcome di luar while loop supaya muncul hanya 1x (Pertama kali program dijalankan)
+# # Bagian Column
+# myProduct = PrettyTable(['Index', 'Nama', 'Stok', 'Harga'])
+# # Bagian Rows
+# myProduct.add_rows(['No. 1', 'apel', 40, 10000])
+# myProduct.add_rows(['No. 1', 'jeruk', 30, 15000])
+# myProduct.add_rows(['No. 1', 'anggur', 20, 20000])
 
-# User Input Menu
-# WHILE TRUE AGAR USER HANYA BISA KELUAR DARI LOOP JIKA MEMILIH EXIT MENU
-while True:
-    # Menu
-    list_menu = [
-        '[1] Menampilkan daftar buah',
-        '[2] Menambah buah',
-        '[3] Menghapus buah',
-        '[4] Membeli buah',
-        '[0] Exit Program'
-    ]
-    
-    print('\nList Menu:')
-    for menu in list_menu:
-        print(menu)
-
-    user_menu_option = input('\nSilahkan pilih menu: ')
-    # Loop user sampai kasih input yang valid
-    if not user_menu_option.isdigit():
-        print('\nPilihan tidak tersedia, silahkan coba lagi.')
-    elif user_menu_option == '0': # Buat Exit Program dulu supaya ada path untuk break paksa while loop
-        # [0] Exit Program
-        print('\nProgram Selesai')
-        break
-    elif user_menu_option == '1':
-        # [1] Menampilkan Daftar Buah
-        print('\nDaftar Buah:\n')
-        # Menggunakan \t agar tampilan daftar buah dapat sejajar menurun kebawah
-        print('Index\t| Nama\t\t\t| Stok     \t| Harga\t') 
-
-        idx = 0 # Index dari 0 agar bisa bertambah seiring berjalannya for loop
-        for product, stock, price in PRODUCT:
-            idx += 1
-            # {product} pakai .title() supaya huruf depan setiap nama buah jadi kapital
-            print(f'{idx}\t| {product.title()}          \t| {stock} \t\t| {price}')
-        continue # Keluar dari while loop Menu --> [1] Menampilkan Daftar Buah
-    elif user_menu_option == '2':
-        # [2] Menambah Buah
-        while True: # Looping sampai user kasih input yang valid
-            add_product = input('\nMasukkan Nama Buah\t: ').lower() # Biar hasilnya rapih pas pake .title()
-            add_stock = input('Masukkan Stock Buah\t: ')
-            add_price = input('Masukkan Harga Buah\t: ')
-            # Looping sampai user kasih input yang valid
-            if not add_price.isdigit() and not add_stock.isdigit():
-                print('Input tidak dikenali, silahkan coba lagi.')
-            else:
-                new_product = [add_product, add_stock, add_price]
-                PRODUCT.append(new_product)
-                break # Keluar dari while loop User Input --> Tambah Buah
-        print()
-
-        # Tampilkan Hasil Update Data Daftar Buah 
-        print('\nDaftar Buah:\n')
-        print('Index\t| Nama\t\t\t| Stok     \t| Harga\t') 
-        idx = 0
-        for product, stock, price in PRODUCT:
-            idx += 1
-            print(f'{idx}\t| {product.title()}          \t| {stock} \t\t| {price}')
-        continue # Keluar dari while loop Menu --> [2] Menambah Buah
-    elif user_menu_option == '3':
-        # [3] Menghapus Buah
-        while True: # Looping sampai user kasih input yang valid
-            del_product = input('\nMasukkan index buah yang ingin dihapus: ')
-            # Loop user sampai kasih input yang valid
-            if not del_product.isdigit():
-                print('Index tidak dikenali, silahkan coba lagi.')
-            elif int(del_product) > len(PRODUCT):
-                # Jika index yang di-input > jumlah data PRODUCT
-                print('Index tidak dikenali, silahkan coba lagi.')
-            else:
-                idx_del = int(del_product)
-                # Hapus anak list dari list PRODUCT berdasarkan index
-                del PRODUCT[idx_del-1]
-                
-                # Tampilkan Hasil Update Data Daftar Buah 
-                print('\nDaftar Buah:\n')
-                print('Index\t| Nama\t\t\t| Stok     \t| Harga\t') 
-                idx = 0
-                for product, stock, price in PRODUCT:
-                    idx += 1
-                    print(f'{idx}\t| {product.title()}          \t| {stock} \t\t| {price}')
-            break # Keluar dari loop User Input --> Menghapus Buah
-        print()
-    elif user_menu_option == '4':
-        # [4] MEMBELI BUAH
-        # Loop:
-            # Input User ---> Beli product berdasarkan index
-                # Validasi Stok
-                    # Isi Cart Sementara
-                # Validasi Cart
-                    # Isi Cart Sementara
-            # Daftar Belanja
-            # Kondisi Transaksi
-        pass
-    else:
-        print('\nInvalid. Silahkan pilih menu yang tersedia')
-    
-print()
-    
-
-# # No. 6
-# stok_apel = 20
-# stok_jeruk = 30
-# stok_anggur = 40
-
-# # 4
-# harga_apel = 10000
-# harga_jeruk = 15000
-# harga_anggur = 20000
-
-# stok = True
-
-# while stok:
-#     # Cast str ke int supaya bisa dicari total harganya
-#     input_apel = int(input('Masukkan Jumlah Apel : '))
-#     input_jeruk = int(input('Masukkan Jumlah Jeruk : '))
-#     input_anggur = int(input('Masukkan Jumlah Anggur : '))
-
-#     if input_apel > stok_apel:
-#         print(f'\nMaaf, stok apel yang tersedia hanya {stok_apel}, silahkan coba lagi.\n') 
-#     elif input_jeruk > stok_jeruk:
-#         print(f'\nMaaf, stok jeruk yang tersedia hanya {stok_jeruk}, silahkan coba lagi.\n')
-#     elif input_anggur > stok_anggur:
-#         print(f'\nMaaf, stok anggur yang tersedia hanya {stok_anggur}, silahkan coba lagi.\n')
-#     # Jika seluruh input apel, jeruk dan anggur <= stok masing-masing barang;
-#     elif input_apel <= stok_apel and input_jeruk <= stok_jeruk and input_anggur <= stok_anggur:
-#         # ---> Lanjut ke Detail Belanja    
-#         stok = False
-
-# print('\nDetail Belanja\n')
-
-# total_apel = input_apel * harga_apel
-# print(f'Apel : {input_apel} x {harga_apel} = {total_apel}')
-
-# total_jeruk = input_jeruk * harga_jeruk
-# print(f'Jeruk : {input_jeruk} x {harga_jeruk} = {total_jeruk}')
-
-# total_anggur = input_anggur * harga_anggur
-# print(f'Anggur : {input_anggur} x {harga_anggur} = {total_anggur}')
-
-# total_harga = total_apel + total_jeruk + total_anggur
-# print(f'\nTotal : {total_harga}')
-
-# # Looping Statements saat transaksi berlangsung
-# transaksi = True
-
-# while transaksi:    
-#     # 10
-#     # Minta uang dari user dan hitung uang dengan total harga belanja
-#     uang = int(input('\nMasukkan jumlah uang : '))
-#     kembalian = uang - total_harga
-    
-#     if uang > total_harga: # Jika uang > total_harga, kasih kembalian
-#         print('\nTerima kasih')
-#         print(f'Uang kembalian Anda : {kembalian}')
-#         print('\nSampai jumpa lagi!')
-#         transaksi = False
-        
-#     elif uang == total_harga:
-#         print('\nTerima kasih')
-#         print('\nSampai jumpa lagi!')
-#         transaksi = False
-        
-#     else: # Jika uang < total_harga, tunjukin kurangnya
-#         kekurangan = total_harga - uang
-#         print('\nGagal melakukan pembayaran')
-#         print(f'Pembayaran diterima: Rp {uang}\n')
-#         print(f'Kekurangan pembayaran sebesar: Rp {kekurangan}\n')
-        
-#         # Looping lagi jika dana tambahan masih kurang, sampai lunas
-#         pembayaran_tertunda = True
-        
-#         while pembayaran_tertunda:
-#             uang_tambahan = int(input('Dana Tambahan: '))
-            
-#             if uang_tambahan < total_harga: # MASIH KE-RESET MULU COYY
-#                 print(f'Pembayaran diterima: Rp {uang_tambahan}\n')
-#                 uang_terkini = uang + uang_tambahan
-#                 print(f'Kekurangan pembayaran sebesar: Rp {total_harga - uang_terkini}\n')
-                
-#             elif uang > total_harga:
-#                 print('Pembayaran berhasil')
-#                 print('\nTerima kasih')
-#                 print(f'Uang kembalian Anda : {uang - total_harga}')
-#                 pembayaran_tertunda = False
-                
-#             else:
-#                 print('Pembayaran berhasil')
-#                 print('\nTerima kasih')
-#                 print('\nSampai jumpa lagi!')
-#                 pembayaran_tertunda = False
-#         transaksi = False
+# print(myProduct)
             
