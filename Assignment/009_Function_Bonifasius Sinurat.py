@@ -11,6 +11,7 @@ list = [5, 6, 3, -1, -3, 5]
 print(avg(list))
 
 # 2
+print()
 print('No. 2')
 print('=====')
 
@@ -35,6 +36,7 @@ print(gcd(9, 7))    # "9 and 7 are coprime number"
 print(gcd(0, 1))    # "Input cannot be zero or negative"
 
 # 3
+print()
 print('No. 3')
 print('=====')
 
