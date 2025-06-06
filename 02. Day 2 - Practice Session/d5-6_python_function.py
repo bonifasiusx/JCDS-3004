@@ -56,3 +56,14 @@ myProduct.add_row(['jeruk', 30, 15000])
 myProduct.add_row(['anggur', 20, 20000])
 
 print(myProduct)
+
+
+a = 2 and 3
+print(a)
+
+lee, kim, tim = 'x', None, ()
+print(not lee if lee or kim else tim)
+
+
+
+# =====================

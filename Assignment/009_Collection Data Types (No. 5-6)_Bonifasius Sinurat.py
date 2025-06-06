@@ -95,6 +95,7 @@ while True:
         cart = []        
         cart_header = ['Nama', 'Qty', 'Harga']
         
+# !!! SAYA MOHON MAAF KARENA GATAU LAGI MAU MAKE CARA APA KECUALI MAKE WHILE LOOP DI DALAM WHILE LOOP !!! #
         while True: # Kondisi awal User melakukan transaksi        
             idx_user = input('\nMasukkan index buah yang ingin dibeli: ')
             qty = input('\nMasukkan jumlah: ')
@@ -138,12 +139,14 @@ while True:
                     # break
                     # Looping Statements saat transaksi berlangsung
                     transaksi = True
-
+                    
+# !!! SAYA MOHON MAAF KARENA GATAU LAGI MAU MAKE CARA APA KECUALI MAKE WHILE LOOP DI DALAM WHILE LOOP !!! #
                     while transaksi:    
                         # 10
                         # Minta uang dari user dan hitung uang dengan total harga belanja
                         uang = int(input('\nMasukkan jumlah uang: '))
                         
+# !!! SAYA MOHON MAAF KARENA GATAU LAGI MAU MAKE CARA APA KECUALI MAKE WHILE LOOP DI DALAM WHILE LOOP !!! #                        
                         while uang < total_price:
                             # Skenario Transaksi GAGAL sampai kondisi uang > total_price tercapai
                             print('\nTransaksi GAGAL')
